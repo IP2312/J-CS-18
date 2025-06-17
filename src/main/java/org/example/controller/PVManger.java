@@ -19,15 +19,21 @@ public class PVManger {
 
     public void startPVManager() throws IOException {
 
-            char choice = view.displayOptions();
+        char choice;
+        do {
+            choice = view.displayOptions();
 
+            switch (choice) {
+                case 'N':
+                    writer.createNewPV(view.getNewPVName());
+            }
 
+        } while (choice != 'Q');
 
-            char[] content = reader.readPV();
-            view.displayPV(content);
+        char[] content = reader.readPV();
+        view.displayPV(content);
 
     }
-
 
 
 }

@@ -9,6 +9,7 @@ public class InputValidator {
                 return true;
             }
         }
+        System.out.println("Not a valid choice.");
         return false;
     }
 }

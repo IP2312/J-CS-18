@@ -13,7 +13,7 @@ public class PVView {
         char choice;
         do {
             System.out.println("Möchtest du eine neu Personalverwaltung anglegen(N)\nPerson hinzufügen(P)\nPerson suchen(S)\nBeenden(Q)?: ");
-            choice = sc.nextLine().trim().charAt(0);
+            choice = Character.toUpperCase(sc.nextLine().trim().charAt(0));
         } while (!inputValidator.validateChoice(choice));
         return choice;
     }
@@ -21,5 +21,10 @@ public class PVView {
     public void displayPV(char[] content) {
         System.out.println(content);
 
+    }
+
+    public String getNewPVName(){
+        System.out.println("Name PV: ");
+        return sc.nextLine();
     }
 }
