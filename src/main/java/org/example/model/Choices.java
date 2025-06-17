@@ -2,6 +2,8 @@ package org.example.model;
 
 public enum Choices {
     NewPV('N'),
+    AnzeigenPV('A'),
+    BeendenPV('Q'),
     NewPerson('P'),
     Search('S'),
     Quit('Q');

@@ -2,7 +2,7 @@ package org.example;
 
 
 import org.example.controller.PVManger;
-import org.example.controller.Reader;
+import org.example.controller.PersonManagementReader;
 import org.example.controller.Writer;
 import org.example.view.PVView;
 
@@ -13,7 +13,7 @@ public class Main {
 
 
 
-        PVManger pvManger = new PVManger(new Reader(), new Writer(), new  PVView());
+        PVManger pvManger = new PVManger(new PersonManagementReader(), new Writer(), new  PVView());
         try {
             pvManger.startPVManager();
         } catch (IOException e) {

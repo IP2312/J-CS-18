@@ -12,4 +12,9 @@ public class InputValidator {
         System.out.println("Not a valid choice.");
         return false;
     }
+
+    public boolean validateChosenPV(int choice){
+//todo
+        return true;
+    }
 }

@@ -2,16 +2,15 @@ package org.example.controller;
 
 import org.example.view.PVView;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 
 public class PVManger {
-    private Reader reader;
+    private PersonManagementReader reader;
     private Writer writer;
     private PVView view;
 
 
-    public PVManger(Reader reader, Writer writer, PVView view) {
+    public PVManger(PersonManagementReader reader, Writer writer, PVView view) {
         this.reader = reader;
         this.writer = writer;
         this.view = view;
@@ -25,13 +24,18 @@ public class PVManger {
 
             switch (choice) {
                 case 'N':
-                    writer.createNewPV(view.getNewPVName());
+                    writer.createNewPV(view.getNewPVName(), reader.sizeOfPV());
+                case 'A':
+                    view.displayPV(reader.readPV());
+                    break;
+                case 'P':
+                    int size = reader.sizeOfPV();
+
+
             }
 
         } while (choice != 'Q');
 
-        char[] content = reader.readPV();
-        view.displayPV(content);
 
     }
 
