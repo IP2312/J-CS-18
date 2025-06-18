@@ -2,6 +2,8 @@ package org.example.controller;
 
 import org.example.model.Choices;
 
+import java.util.Optional;
+
 public class InputValidator {
     public boolean validateChoice(char choice){
         for (Choices c : Choices.values()) {
@@ -13,8 +15,15 @@ public class InputValidator {
         return false;
     }
 
-    public boolean validateChosenPV(int choice){
-//todo
-        return true;
+    public Optional<Integer> validateChosenPV(String choice, int sizePv){
+        try{
+            int intChoice = Integer.parseInt(choice.trim());
+            if (intChoice > 0 || intChoice <= sizePv){
+                return Optional.of(intChoice);
+            }
+            return  Optional.empty();
+        }catch(NumberFormatException e){
+           return Optional.empty();
+        }
     }
 }

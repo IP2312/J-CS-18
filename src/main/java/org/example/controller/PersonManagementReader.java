@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class PersonManagementReader {
+
     public List<String> readPV() throws IOException {
         return Files.readAllLines(Paths.get("data/personenManagements.csv"));
     }

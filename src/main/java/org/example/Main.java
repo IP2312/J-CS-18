@@ -3,7 +3,7 @@ package org.example;
 
 import org.example.controller.PVManger;
 import org.example.controller.PersonManagementReader;
-import org.example.controller.Writer;
+import org.example.controller.PersonManagementWriter;
 import org.example.view.PVView;
 
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class Main {
 
 
 
-        PVManger pvManger = new PVManger(new PersonManagementReader(), new Writer(), new  PVView());
+        PVManger pvManger = new PVManger(new PersonManagementReader(), new PersonManagementWriter(), new  PVView());
         try {
             pvManger.startPVManager();
         } catch (IOException e) {

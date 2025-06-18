@@ -1,10 +1,9 @@
 package org.example.controller;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.util.List;
 
-public class Writer {
+
+public class PersonManagementWriter {
     public void createNewPV(String name, int sizeOfPV) throws IOException {
         File file = new File ("data/personenManagements.csv");
         boolean exists = file.exists();

@@ -1,18 +1,18 @@
 package org.example.controller;
 
+import org.example.model.PV;
 import org.example.view.PVView;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class PVManger {
-    private PersonManagementReader reader;
-    private Writer writer;
+    private PV pv;
     private PVView view;
 
 
-    public PVManger(PersonManagementReader reader, Writer writer, PVView view) {
-        this.reader = reader;
-        this.writer = writer;
+    public PVManger(PV pv, PVView view) {
+
         this.view = view;
     }
 
@@ -24,12 +24,15 @@ public class PVManger {
 
             switch (choice) {
                 case 'N':
-                    writer.createNewPV(view.getNewPVName(), reader.sizeOfPV());
+                    pv.createNewPV(view.getNewPVName());
                 case 'A':
-                    view.displayPV(reader.readPV());
+                    view.displayPV(PMreader.readPV());
                     break;
                 case 'P':
-                    int size = reader.sizeOfPV();
+                    Optional<Integer> validatedChoice = view.choosePv(PMreader.sizeOfPV(), PMreader.readPV());
+                    //createPerson(validatedChoice);
+
+                    break;
 
 
             }
